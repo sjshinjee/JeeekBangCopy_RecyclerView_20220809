@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.jeeekbangcopy_recyclerview_20220809.R
 import com.example.jeeekbangcopy_recyclerview_20220809.datas.RoomData
@@ -19,6 +20,15 @@ class RoomRecyclerViewAdapter(
         fun bind(item : RoomData) {
 //            itemView - item  //실제로 리싸이클러뷰 뷰홀더에서 제공하는 한 칸의 뷰인 itemView에
                               /// 우리가 넣을 item(한 칸에 들어갈 RoomData)를 연결(bind)하는 거다
+            val priceTxt = itemView.findViewById<TextView>(R.id.priceTxt)
+            val addressTxt = itemView.findViewById<TextView>(R.id.addressTxt)
+            val levelTxt = itemView.findViewById<TextView>(R.id.levelTxt)
+            val descriptionTxt = itemView.findViewById<TextView>(R.id.descriptionTxt)
+
+            priceTxt.text = item.getFormattedPrice()
+            addressTxt.text = "${item.address}, "
+            levelTxt.text = item.getFormattedLevel()
+            descriptionTxt.text = item.description
         }
     }
 
