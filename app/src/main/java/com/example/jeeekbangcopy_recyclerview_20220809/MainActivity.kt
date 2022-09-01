@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     // 멤버변수 binding 에 ActivityMainBinding 자료형을 넣을거라 선언
     lateinit var binding: ActivityMainBinding
 
-    val mRoomList : List<RoomData>()
+    val mRoomList = ArrayList<RoomData>()
 
     lateinit var mRoomAdapter : RoomRecyclerViewAdapter
 
