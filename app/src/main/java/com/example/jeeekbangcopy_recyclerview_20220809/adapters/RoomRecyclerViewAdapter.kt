@@ -28,7 +28,7 @@ class RoomRecyclerViewAdapter(
             priceTxt.text = item.getFormattedPrice()
             addressTxt.text = "${item.address}, "
             levelTxt.text = item.getFormattedLevel()
-            descriptionTxt.text = item.description
+
         }
     }
 
