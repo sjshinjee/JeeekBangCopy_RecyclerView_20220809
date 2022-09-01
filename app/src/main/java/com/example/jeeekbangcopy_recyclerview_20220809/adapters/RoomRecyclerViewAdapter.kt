@@ -1,11 +1,14 @@
 package com.example.jeeekbangcopy_recyclerview_20220809.adapters
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.jeeekbangcopy_recyclerview_20220809.MainActivity
 import com.example.jeeekbangcopy_recyclerview_20220809.R
 import com.example.jeeekbangcopy_recyclerview_20220809.datas.RoomData
 
@@ -30,6 +33,11 @@ class RoomRecyclerViewAdapter(
             levelTxt.text = item.getFormattedLevel()
             descriptionTxt.text = item.description
 
+            itemView.setOnClickListener {
+                val myIntent = Intent(mContext, MainActivity::class.java)
+                myIntent.putExtra("room", item)
+                mContext.startActivity(myIntent)
+            }
 
         }
     }
