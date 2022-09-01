@@ -36,6 +36,8 @@ class MainActivity : AppCompatActivity() {
         mRoomAdapter = RoomRecyclerViewAdapter(this, mRoomList)
         binding.roomRecyclerView.adapter = mRoomAdapter
 
+        binding.roomRecyclerView.layoutManager = LinearLayoutManager(this)
+
 
     }
 }
